@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   bzero.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beomjuki <beomjuki@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 20:11:34 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/18 20:00:33 by beomjuki         ###   ########.fr       */
+/*   Created: 2023/03/18 19:41:32 by beomjuki          #+#    #+#             */
+/*   Updated: 2023/03/18 20:01:10 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <strings.h>
+#include <stdio.h>
 
 void	*ft_memset(void *ptr, int value, size_t num)
 {
@@ -26,4 +27,9 @@ void	*ft_memset(void *ptr, int value, size_t num)
 		i += 1;
 	}
 	return (ptr);
+}
+
+void	*ft_bzero(void *s, size_t n)
+{
+	return (ft_memset(s, 0, n));
 }

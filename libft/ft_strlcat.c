@@ -1,0 +1,54 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/18 22:24:24 by beomjuki          #+#    #+#             */
+/*   Updated: 2023/03/18 22:43:40 by beomjuki         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdlib.h>
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	len;
+
+	len = 0;
+	while (*str)
+	{
+		len++;
+		str++;
+	}
+	return (len);
+}
+
+size_t	ft_strlcat(char *dst, const char *src, size_t detsize)
+{
+	size_t	dst_size;
+	size_t	src_size;
+	size_t	i;
+	size_t	j;
+
+	dst_size = ft_strlen(dst);
+	src_size = ft_strlen(src);
+	if ((detsize < dst_size) || (detsize == 0))
+		return (detsize + src_size);
+	else
+	{
+		i = 0;
+		while (i < dst_size)
+			i++;
+		j = 0;
+		while (i + j + 1 < detsize)
+		{
+			*(dst + i) = *(src + j);
+			i++;
+			j++;
+		}
+		*(dst + i) = '\0';
+		return (dst_size + src_size);
+	}
+}

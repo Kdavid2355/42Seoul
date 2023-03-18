@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beomjuki <beomjuki@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 20:11:34 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/18 20:00:33 by beomjuki         ###   ########.fr       */
+/*   Created: 2023/03/18 20:48:48 by beomjuki          #+#    #+#             */
+/*   Updated: 2023/03/18 21:32:03 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*ft_memset(void *ptr, int value, size_t num)
+void	*ft_memmove(void *dest, const void *src, size_t num)
 {
+	unsigned char	*temp;
 	size_t			i;
-	unsigned char	*str;
 
-	str = (unsigned char *)ptr;
+	i = 0;
+	temp = (unsigned char *)malloc(sizeof(unsigned char) * num);
+	while (i < num)
+	{
+		*(temp + i) = *((unsigned char *)src + i);
+		i += 1;
+	}
 	i = 0;
 	while (i < num)
 	{
-		*str = (unsigned char)value;
-		str++;
+		*((unsigned char *)dest + i) = *((unsigned char *)temp + i);
 		i += 1;
 	}
-	return (ptr);
+	free(temp);
+	return (dest);
 }
