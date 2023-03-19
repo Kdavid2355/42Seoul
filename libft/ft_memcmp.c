@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/18 22:51:14 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/19 10:28:19 by beomjuki         ###   ########.fr       */
+/*   Created: 2023/03/19 12:11:12 by beomjuki          #+#    #+#             */
+/*   Updated: 2023/03/19 17:03:56 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h> 
+#include <string.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t	i;
+	unsigned char	*sent1;
+	unsigned char	*sent2;
 
-	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && i < n - 1)
+	sent1 = (unsigned char *)s1;
+	sent2 = (unsigned char *)s2;
+	if (n == 0)
+		return (0);
+	while (*sent1 && *sent2 && *sent1 == *sent2 && n)
 	{
-		i++;
+		sent1++;
+		sent2++;
+		n--;
 	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	return (*sent1 - *sent2);
 }

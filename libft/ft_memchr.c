@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/18 22:51:14 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/19 10:28:19 by beomjuki         ###   ########.fr       */
+/*   Created: 2023/03/19 11:50:13 by beomjuki          #+#    #+#             */
+/*   Updated: 2023/03/19 12:10:45 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h> 
+#include <string.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memchr(const void *p, int value, size_t num)
 {
-	size_t	i;
+	unsigned char	*ptr;
 
-	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && i < n - 1)
+	ptr = (unsigned char *)p;
+	value = (unsigned char)value;
+	while (num--)
 	{
-		i++;
+		if (*ptr == value)
+			return ((void *)ptr);
+		ptr++;
 	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	return (NULL);
 }

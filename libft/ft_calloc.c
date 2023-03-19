@@ -1,25 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/18 22:51:14 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/19 10:28:19 by beomjuki         ###   ########.fr       */
+/*   Created: 2023/03/19 17:49:15 by beomjuki          #+#    #+#             */
+/*   Updated: 2023/03/19 18:06:18 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h> 
+#include <stdlib.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memset(void *ptr, int value, size_t num)
 {
-	size_t	i;
+	size_t			i;
+	unsigned char	*str;
 
+	str = (unsigned char *)ptr;
 	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && i < n - 1)
+	while (i < num)
 	{
-		i++;
+		*str = (unsigned char)value;
+		str++;
+		i += 1;
 	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	return (ptr);
+}
+
+void	*ft_calloc(size_t count, size_t size)
+{
+	void	*array;
+
+	array = malloc(count * size);
+	if (!array)
+		return (NULL);
+	ft_memset(array, 0, count * size);
+	return (array);
 }

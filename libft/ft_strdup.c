@@ -1,25 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/18 22:51:14 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/19 10:28:19 by beomjuki         ###   ########.fr       */
+/*   Created: 2023/03/19 18:08:03 by beomjuki          #+#    #+#             */
+/*   Updated: 2023/03/19 18:25:39 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h> 
+#include <stdlib.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strlen(const char *s)
 {
-	size_t	i;
+	size_t	cnt;
 
-	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && i < n - 1)
+	cnt = 0;
+	while (*s)
 	{
-		i++;
+		cnt += 1;
+		s++;
 	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	return (cnt);
+}
+
+char	*ft_strdup(const char *s)
+{
+	char	*array;
+	int		i;
+
+	array = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
+	i = 0;
+	if (array == NULL)
+		return (NULL);
+	while (*s)
+	{
+		*array = *s;
+		array++;
+		s++;
+		i += 1;
+	}
+	*array = '\0';
+	return (array - i);
 }
