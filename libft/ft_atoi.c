@@ -6,11 +6,11 @@
 /*   By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:26:19 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/19 19:06:40 by beomjuki         ###   ########.fr       */
+/*   Updated: 2023/03/19 20:29:54 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_isspace(char c)
 {

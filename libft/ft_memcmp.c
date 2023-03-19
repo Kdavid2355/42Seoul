@@ -6,11 +6,11 @@
 /*   By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 12:11:12 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/19 17:03:56 by beomjuki         ###   ########.fr       */
+/*   Updated: 2023/03/19 20:32:48 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

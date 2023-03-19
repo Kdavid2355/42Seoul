@@ -6,36 +6,15 @@
 /*   By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 16:26:32 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/19 17:46:22 by beomjuki         ###   ########.fr       */
+/*   Updated: 2023/03/19 20:42:33 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
-int	ft_strlen(const char *s)
-{
-	size_t	cnt;
+size_t	ft_strlen(const char *s);
 
-	cnt = 0;
-	while (*s)
-	{
-		cnt += 1;
-		s++;
-	}
-	return (cnt);
-}
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t	i;
-
-	i = 0;
-	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && i < n - 1)
-	{
-		i++;
-	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
-}
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
 
 char	*ft_strnstr(const char *str, const char *tofind, size_t len)
 {

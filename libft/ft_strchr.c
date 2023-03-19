@@ -6,11 +6,11 @@
 /*   By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 10:54:45 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/19 11:24:45 by beomjuki         ###   ########.fr       */
+/*   Updated: 2023/03/19 20:35:13 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

@@ -6,11 +6,11 @@
 /*   By: beomjuki <beomjuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 20:11:34 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/18 20:00:33 by beomjuki         ###   ########.fr       */
+/*   Updated: 2023/03/19 20:31:06 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memset(void *ptr, int value, size_t num)
 {

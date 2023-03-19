@@ -6,24 +6,13 @@
 /*   By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:08:03 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/19 18:25:39 by beomjuki         ###   ########.fr       */
+/*   Updated: 2023/03/19 20:41:43 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int	ft_strlen(const char *s)
-{
-	size_t	cnt;
-
-	cnt = 0;
-	while (*s)
-	{
-		cnt += 1;
-		s++;
-	}
-	return (cnt);
-}
+size_t	ft_strlen(const char *s);
 
 char	*ft_strdup(const char *s)
 {

@@ -6,11 +6,11 @@
 /*   By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 20:02:13 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/18 20:48:01 by beomjuki         ###   ########.fr       */
+/*   Updated: 2023/03/19 20:37:01 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *destination, const void *source, size_t num)
 {

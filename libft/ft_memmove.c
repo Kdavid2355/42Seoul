@@ -6,11 +6,11 @@
 /*   By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 20:48:48 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/18 21:32:03 by beomjuki         ###   ########.fr       */
+/*   Updated: 2023/03/19 20:30:56 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t num)
 {

@@ -6,13 +6,13 @@
 /*   By: beomjuki <beomjuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 20:01:03 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/17 20:09:28 by beomjuki         ###   ########.fr       */
+/*   Updated: 2023/03/19 20:41:30 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int	ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	cnt;
 
