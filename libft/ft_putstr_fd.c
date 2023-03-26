@@ -1,27 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: beomjuki <beomjuki@student.42.fr>          +#+  +:+       +#+        */
+/*   By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 19:56:09 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/17 20:00:05 by beomjuki         ###   ########.fr       */
+/*   Created: 2023/03/26 12:22:53 by beomjuki          #+#    #+#             */
+/*   Updated: 2023/03/26 12:35:16 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_isprint(int c)
-{	
-	if ((31 < c && c < 127))
-		return (1);
-	return (0);
-}
-/*
-#include <stdio.h>
-#include <ctype.h>
 
-int main(void)
+#include "libft.h"
+
+void	ft_putstr_fd(char *s, int fd)
 {
-	printf("%d", ft_isprint(-1));
-	printf("%d", isprint(-1));
-
-}*/
+	write(fd, s, ft_strlen(s));
+}

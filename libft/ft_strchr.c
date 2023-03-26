@@ -14,11 +14,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	char	*ptr;
+	char	find;
+
+	find = (unsigned char)c;
+	ptr = (char *)s;
+	while (*ptr != '\0')
 	{
-		if (*s == (unsigned char)c)
-			return ((char *)s);
-		s++;
+		if (*ptr == find)
+			return (ptr);
+		ptr++;
 	}
-	return (NULL);
+	if (find == 0)
+		return (ptr);
+	return (0);
 }

@@ -12,35 +12,31 @@
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s);
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n);
-
 char	*ft_strnstr(const char *str, const char *tofind, size_t len)
 {
-	size_t	str_len;
 	size_t	tofind_len;
+	size_t	str_len;
 	size_t	i;
 	size_t	j;
 
-	if (!*tofind)
+	if (*tofind == '\0')
 		return ((char *)str);
 	str_len = ft_strlen(str);
 	tofind_len = ft_strlen(tofind);
-	if (len < tofind_len || str_len < tofind_len)
-		return (NULL);
+	if (str_len < tofind_len)
+		return (0);
 	i = 0;
-	while (i < str_len)
+	while (i < len)
 	{
 		j = 0;
 		while (j < tofind_len)
 		{
-			if (str[i] == tofind[j])
+			if (str[i] == tofind[j] && i + tofind_len <= len)
 				if (ft_strncmp(&str[i], &tofind[0], tofind_len) == 0)
 					return ((char *)&str[i]);
 			j++;
 		}
 		i++;
 	}
-	return (NULL);
+	return (0);
 }

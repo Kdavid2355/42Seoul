@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beomjuki <beomjuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 19:56:09 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/17 20:00:05 by beomjuki         ###   ########.fr       */
+/*   Created: 2023/03/26 03:50:28 by beomjuki          #+#    #+#             */
+/*   Updated: 2023/03/26 12:44:25 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_isprint(int c)
-{	
-	if ((31 < c && c < 127))
-		return (1);
-	return (0);
-}
-/*
-#include <stdio.h>
-#include <ctype.h>
 
-int main(void)
+#include "libft.h"
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	printf("%d", ft_isprint(-1));
-	printf("%d", isprint(-1));
+	unsigned int	i;
 
-}*/
+	i = 0;
+	if (s == NULL || f == NULL)
+		return ;
+	while (s[i] != '\0')
+	{
+		(*f)(i, s + i);
+		i++;
+	}
+}

@@ -22,24 +22,23 @@ int	ft_isspace(char c)
 
 int	ft_atoi(const char *s)
 {
-	int		sign;
-	int		res;
+	int	sign;
+	int	res;
 
 	sign = 1;
 	res = 0;
 	while (ft_isspace(*s))
 		s++;
-	if (*s == '+' || *s == '-')
-	{
-		s++;
+	if (*s == '-')
 		sign *= -1;
-	}
+	if (*s == '+' || *s == '-')
+		s++;
 	while (*s)
 	{
 		if (*s >= '0' && *s <= '9')
 			res = res * 10 + (*s - '0');
-		else
-			return (0);
+		if (!(*s >= '0' && *s <= '9'))
+			return (res * sign);
 		s++;
 	}
 	return (res * sign);

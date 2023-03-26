@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beomjuki <beomjuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/17 19:56:09 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/17 20:00:05 by beomjuki         ###   ########.fr       */
+/*   Created: 2023/03/25 10:23:25 by beomjuki          #+#    #+#             */
+/*   Updated: 2023/03/25 10:23:26 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-int	ft_isprint(int c)
-{	
-	if ((31 < c && c < 127))
-		return (1);
-	return (0);
-}
-/*
-#include <stdio.h>
-#include <ctype.h>
 
-int main(void)
+#include "libft.h"
+
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	printf("%d", ft_isprint(-1));
-	printf("%d", isprint(-1));
+	char	*str;
 
-}*/
+	if (s == NULL)
+		return (0);
+	if (start > ft_strlen(s))
+		return (ft_strdup(""));
+	if (ft_strlen(s + start) < len)
+		len = ft_strlen(s + start);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (0);
+	ft_strlcpy(str, s + start, len + 1);
+	return (str);
+}

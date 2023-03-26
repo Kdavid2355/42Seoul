@@ -1,34 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/18 20:48:48 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/19 20:30:56 by beomjuki         ###   ########.fr       */
+/*   Created: 2023/03/26 12:28:48 by beomjuki          #+#    #+#             */
+/*   Updated: 2023/03/26 12:44:03 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *destination, const void *source, size_t num)
+void	ft_putnbr(int n, int fd)
 {
-	unsigned char	*dest;
-	unsigned char	*src;
+	if (n > 9)
+		ft_putnbr(n / 10, fd);
+	write(fd, &"0123456789"[n % 10], 1);
+}
 
-	dest = (unsigned char *)destination;
-	src = (unsigned char *)source;
-	if (dest == src || num == 0)
-		return (destination);
-	if (dest < src)
-		return (ft_memcpy(dest, src, num));
-	else if (dest > src)
+void	ft_putnbr_fd(int n, int fd)
+{
+	if (n == -2147483648)
 	{
-		while (num--)
-		{
-			dest[num] = src[num];
-		}
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	return (destination);
+	if (n < 0)
+	{
+		write(fd, "-", 1);
+		n *= -1;
+	}
+	ft_putnbr(n, fd);
 }
