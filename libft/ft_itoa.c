@@ -6,7 +6,7 @@
 /*   By: beomjuki <beomjuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 03:12:50 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/26 13:59:27 by beomjuki         ###   ########.fr       */
+/*   Updated: 2023/03/28 16:31:49 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,10 +70,4 @@ char	*ft_itoa(int n)
 		return (NULL);
 	printf("%d", 2);
 	return (itoa(n, len, ans));
-}
-
-#include <stdio.h>
-int main(void)
-{
-	printf("%s", ft_itoa(-123));
 }
