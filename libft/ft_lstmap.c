@@ -6,12 +6,12 @@
 /*   By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 22:02:57 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/28 22:37:25 by beomjuki         ###   ########.fr       */
+/*   Updated: 2023/03/28 22:39:49 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/*
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*temp;
@@ -36,4 +36,4 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	ft_isiter(ans, f);
 	return (ans);
-}
+}*/

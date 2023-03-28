@@ -6,13 +6,13 @@
 /*   By: beomjuki <beomjuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 03:12:50 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/28 16:31:49 by beomjuki         ###   ########.fr       */
+/*   Updated: 2023/03/28 22:41:18 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
-
+/*
 size_t	count_len(int n)
 {
 	size_t	len;
@@ -70,4 +70,4 @@ char	*ft_itoa(int n)
 		return (NULL);
 	printf("%d", 2);
 	return (itoa(n, len, ans));
-}
+}*/
