@@ -6,11 +6,25 @@
 /*   By: beomjuki <beomjuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 00:19:52 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/26 00:19:53 by beomjuki         ###   ########.fr       */
+/*   Updated: 2023/03/31 17:03:50 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	**ft_malloc_error(char **ans)
+{
+	size_t	i;
+
+	i = 0;
+	while (ans[i])
+	{
+		free(ans[i]);
+		i++;
+	}
+	free(ans);
+	return (NULL);
+}
 
 char	*ft_makeword(char *s, char c)
 {
@@ -77,6 +91,8 @@ char	**ft_split(char const *s, char c)
 		if (s[i] != c && s[i] != '\0')
 		{
 			ans[j] = ft_makeword((char *)&s[i], c);
+			if (!ans[j])
+				return (ft_malloc_error(ans));
 			j++;
 		}
 		while (s[i] != c && s[i] != '\0')

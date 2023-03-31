@@ -6,13 +6,12 @@
 /*   By: beomjuki <beomjuki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 03:12:50 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/28 22:41:18 by beomjuki         ###   ########.fr       */
+/*   Updated: 2023/03/31 15:53:32 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-/*
+
 size_t	count_len(int n)
 {
 	size_t	len;
@@ -33,34 +32,11 @@ size_t	count_len(int n)
 	return (len);
 }
 
-char	*itoa(int n, size_t len, char *ans)
-{
-	size_t	i;
-
-	i = len;
-	ans[i] = '\0';
-	i--;
-	if (n == 0)
-	{
-		ans[i] = '0';
-		return (ans);
-	}
-	while (n > 0)
-	{
-		ans[i] = (n % 10) + '0';
-		n /= 10;
-		i--;
-	}
-	printf("%d", 3);
-	if (n < 0)
-		ans[i] = '-';
-	return (ans);
-}
-
 char	*ft_itoa(int n)
 {
 	size_t	len;
 	char	*ans;
+	size_t	i;
 
 	if (n == -2147483648)
 		return (ft_strdup("-2147483648"));
@@ -68,6 +44,18 @@ char	*ft_itoa(int n)
 	ans = (char *)malloc(sizeof(char) * (len + 1));
 	if (!ans)
 		return (NULL);
-	printf("%d", 2);
-	return (itoa(n, len, ans));
-}*/
+	i = 0;
+	if (n < 0)
+	{
+		ans[0] = '-';
+		n *= -1;
+		i++;
+	}
+	ans[len] = '\0';
+	while (i < len)
+	{
+		ans[len-- - 1] = (n % 10) + '0';
+		n /= 10;
+	}
+	return (ans);
+}
