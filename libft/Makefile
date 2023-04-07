@@ -6,7 +6,7 @@
 #    By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/19 19:49:19 by beomjuki          #+#    #+#              #
-#    Updated: 2023/03/28 22:35:28 by beomjuki         ###   ########.fr        #
+#    Updated: 2023/04/07 14:08:26 by beomjuki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,6 @@ SRCS_BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstadd_back_bonus.c ft
 OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 OBJS = ${SRCS:.c=.o}
-INC = includes
 
 CC = cc
 CFLAGS = -c -Wall -Wextra -Werror
@@ -30,7 +29,7 @@ ${NAME} : ${OBJS}
 	${AR} ${ARFLAGS} ${NAME} ${OBJS}
 
 %.o : %.c
-	$(CC) $(CFLAGS) $< -o $@ -I $(INC)
+	$(CC) $(CFLAGS) $< -o $@
 
 bonus: $(OBJS) $(OBJS_BONUS)
 	ar $(ARFLAGS) $(NAME) $(OBJS) $(OBJS_BONUS)
