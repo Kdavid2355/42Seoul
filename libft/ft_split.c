@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	**ft_malloc_error(char **ans)
+static char	**ft_malloc_error(char **ans)
 {
 	size_t	i;
 
@@ -26,7 +26,7 @@ char	**ft_malloc_error(char **ans)
 	return (NULL);
 }
 
-char	*ft_makeword(char *s, char c)
+static char	*ft_makeword(char *s, char c)
 {
 	size_t	len;
 	char	*word;
@@ -54,7 +54,7 @@ char	*ft_makeword(char *s, char c)
 	return (word);
 }
 
-int	count_word(char *s, char c)
+static int	count_word(char *s, char c)
 {
 	size_t	cnt;
 	size_t	i;

@@ -33,22 +33,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	ans[i] = '\0';
 	return (ans);
 }
-
-/*
-char add_one(unsigned int i, char c) {
-    return c + i;
-}
-#include <stdio.h>
-
-int main(void) {
-    char *s = "hello world";
-    char *result = ft_strmapi(s, &add_one);
-    if (result == NULL) {
-        printf("Error: ft_strmapi returned NULL\n");
-        return 1;
-    }
-    printf("Original string: %s\n", s);
-    printf("Transformed string: %s\n", result);
-    free(result);
-    return 0;
-}*/

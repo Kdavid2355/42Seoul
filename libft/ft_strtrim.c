@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	find_end(char const *s1, char const *set)
+static int	find_end(char const *s1, char const *set)
 {
 	char	*ptr;
 	size_t	index;
@@ -37,7 +37,7 @@ int	find_end(char const *s1, char const *set)
 	return (len - index);
 }
 
-int	find_start(char const *s1, char const *set)
+static int	find_start(char const *s1, char const *set)
 {
 	char	*ptr;
 	size_t	index;
