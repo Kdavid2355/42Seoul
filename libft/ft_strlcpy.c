@@ -6,7 +6,7 @@
 /*   By: beomjuki <beomjuki@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/18 22:17:43 by beomjuki          #+#    #+#             */
-/*   Updated: 2023/03/19 20:31:45 by beomjuki         ###   ########.fr       */
+/*   Updated: 2023/04/07 16:42:41 by beomjuki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	src_len;
 
 	src_len = ft_strlen(src);
-	if (size == 0)
+	if (size <= 0)
 		return (src_len);
 	i = 0;
 	while (src[i] != '\0' && (i < (size - 1)))
